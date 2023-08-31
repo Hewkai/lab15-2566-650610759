@@ -53,6 +53,7 @@ const schema = z
   .refine(
     (data) => {
       if (data.password != data.confirmPassword) return false;
+      return true;
     },
     { message: "Password does not match", path: ["confirmPassword"] }
   )
